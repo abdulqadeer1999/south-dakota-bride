@@ -25,7 +25,7 @@
                     </div>
                     <div class="Wed-Art-Div">
                         <div class="couple-img-wed">
-                            <img src="<?php echo e(asset('website/images/1x/banner-img-wed.png')); ?>" alt="">
+                            <img src="<?php echo e(asset('storage/uploads/cms/' . $wedding_banner->image)); ?>" alt="">
                         </div>
 
                     </div>
@@ -33,7 +33,7 @@
             </div>
 
             <div class="col-lg-6 col-sm-6 mb-5 overlay-image-text wow animated fadeInRight" data-wow-duration="1s" data-wow-delay="0.5s">
-                <h1 class="couple-text-wed pt-5">Real South Dakota Weddings</h1>
+                <h1 class="couple-text-wed pt-5"><?php echo e($wedding_banner->title); ?></h1>
                 <p class="couple-para-wed">Search by couple name</p>
                     <div> <input type="search" placeholder="Find a couple"></div>
                     <div class="mt-4"><a href="javascript:void(0)"><button class="reg-btn">Search Now</button></a></div>

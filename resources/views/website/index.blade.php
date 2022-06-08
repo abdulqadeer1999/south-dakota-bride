@@ -34,7 +34,7 @@
                     <div class="Wed-Art-Div">
                         <!-- <div class="couple-img"> -->
                         <div class="couple-img ">
-                            <img src="{{asset('website//images/1x/couple-image.png')}}" alt="">
+                            <img src="{{ asset('storage/uploads/cms/' . $banner->image) }}" alt="">
                         </div>
 
                     </div>
@@ -44,8 +44,8 @@
             <div class="col-lg-6 col-sm-6 mb-5 col-md-6 overlay-image-text  wow animated fadeInRight"
                 data-wow-duration="1s" data-wow-delay="0.5s" d-flex align-items-center">
                 <div class="Home_text_div">
-                    <h1 class="couple-text-home pt-5">Start a <span>new life <br></span>
-                        with the one<br><span>you love</span></h1>
+                    <h1 class="couple-text-home pt-5">{{$banner->title1}} <span>{{$banner->title2}}<br></span>
+                        {{$banner->title3}}<br><span>{{$banner->title4}}</span></h1>
                     <div class="d-flex align-item-center pt-4 Home-Button">
                         <div class="reg-div"><a href="{{route('signin')}}" data-bs-toggle="modal"
                                 data-bs-target="#exampleModal"><button
@@ -70,26 +70,21 @@
                 <div class="col-lg-5 col-sm-12 ">
                     <div class="about-text-div">
                         <h1 class="about-text pt-5 text wow animated fadeInLeft " data-wow-duration="1s"
-                            data-wow-delay="0.5s">About Us</h1>
-                        <p class="about-para d-flex wow animated fadeInLeft">
-                            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Culpa inventore officiis
-                            quibusdam
-                            dolore porro quo odit accusamus blanditiis optio corrupti!
-                            dolore porro quo odit accusamus blanditiis optio corrupti!
-                            consectetur adipisicing elit. Culpa inventore officiis quibusdam
-                            consectetur adipisicing elit. Culpa inventore officiis quibusdam .
+                            data-wow-delay="0.5s">{{$about->title}}</h1>
+                        <p class="about-para d-flex wow animated fadeInLeft" >
+                           {!!$about->content !!}
                         </p>
                         <div class="reg-div pt-3"><a href="{{route('about-us')}}"><button
                                     class="reg-btn">Read
                                     More</button></a></div>
                         <div class="overlay-image pt-5">
-                            <img src="{{asset('website/images/1x/about-overlay.png')}}" alt="">
+                            <img src="{{ asset('storage/uploads/cms/' . $about->image) }}" alt="">
                         </div>
                     </div>
                 </div>
                 <div class="col-lg-6 col-sm-12">
                     <div class="about-bg wow animated fadeInRight" data-wow-duration="1s" data-wow-delay="0.5s">
-                        <img src="{{asset('website/images/1x/about-bg_1.png')}}" alt="">
+                        <img src="{{ asset('storage/uploads/cms/' . $about->image2) }}" alt="">
                     </div>
                 </div>
             </div>

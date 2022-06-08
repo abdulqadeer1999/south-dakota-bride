@@ -12,10 +12,10 @@
                             </div>
                             <div class="line-center">
                                 <ul>
-                                    <li><a href="https://www.facebook.com" target="_blank"><i class="fa-brands fa-facebook-f"></i></a></li>
-                                    <li><a href="https://www.instagram.com" target="_blank"><i class="fa-brands fa-instagram"></i></a></li>
-                                    <li><a href="https://www.twitter.com" target="_blank"><i class="fa-brands fa-twitter"></i></a></li>
-                                    <li><a href="https://www.youtube.com" target="_blank"><i class="fa-brands fa-youtube"></i></a></li>
+                                    <li><a href="<?php echo e($facebook[0]->social_media ?? ''); ?>" target="_blank"><i class="fa-brands fa-facebook-f"></i></a></li>
+                                    <li><a href="<?php echo e($instagram[0]->social_media ?? ''); ?>" target="_blank"><i class="fa-brands fa-instagram"></i></a></li>
+                                    <li><a href="<?php echo e($twitter[0]->social_media ?? ''); ?>" target="_blank"><i class="fa-brands fa-twitter"></i></a></li>
+                                    <li><a href="<?php echo e($youtube[0]->social_media ?? ''); ?>" target="_blank"><i class="fa-brands fa-youtube"></i></a></li>
                                 </ul>
                             </div>
                             <div class="line-before">
@@ -25,7 +25,7 @@
                     </div>
                     <div class="Wed-Art-Div">
                         <div class="couple-img-wed">
-                            <img src="<?php echo e(asset('website/images/1x/Articles-banner.png')); ?>" alt="">
+                            <img src="<?php echo e(asset('storage/uploads/cms/' . $blog_banner->image)); ?>" alt="">
                         </div>
 
                     </div>
@@ -33,7 +33,7 @@
             </div>
 
             <div class="col-lg-6 col-sm-6 mb-5 overlay-image-text wow  animated fadeInRight" data-wow-duration="1s" data-wow-delay="0.5s">
-                <h1 class="couple-text-wed pt-5 wow  animated fadeInRight" data-wow-duration="1s" data-wow-delay="0.5s">Weddings blog</h1>
+                <h1 class="couple-text-wed pt-5 wow  animated fadeInRight" data-wow-duration="1s" data-wow-delay="0.5s"><?php echo e($blog_banner->title); ?></h1>
                 <div class="row mt-5">
                     <div class="col-lg-6">
                             <p class="couple-para-wed pb-3 pt-3">Select an Blog Catgory</p>
@@ -62,95 +62,19 @@
     <div class="d-flex justify-content-center">
     <div class="CstDivs container">
        <div class="row mt-5">
+        <?php $__currentLoopData = $blogs; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $item): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
             <div class="col-lg-4 col-sm-6 mt-4 wow animate__delay-1s animated fadeInLeft" data-wow-duration="1s" data-wow-delay="0.5s">
+
                 <div class="card">
-                    <a href="<?php echo e(route('blog-details')); ?>"><img src="<?php echo e(asset('website/images/1x/Articles-img-1.png')); ?>" class="card-img-top" alt="..."></a>
+                    <a href="<?php echo e(route('blog-details',$item->id)); ?>"><img src="<?php echo e(asset('storage/uploads/cms/' . $item->image)); ?>" class="card-img-top" alt="..."></a>
                     <div class="card-body">
-                      <h6 class="card-text">john Watson</h6>
+                      <h6 class="card-text"><?php echo e($item->men); ?></h6>
                       <h6 class="card-text">And</h6>
-                      <h6 class="card-text">julie Williams</h6>
+                      <h6 class="card-text"><?php echo e($item->women); ?></h6>
                     </div>
                   </div>
             </div>
-            <div class="col-lg-4 col-sm-6 mt-4 wow animate__delay-1s animated fadeInLeft" data-wow-duration="1s" data-wow-delay="0.5s">
-                <div class="card">
-                    <a href="<?php echo e(route('blog-details')); ?>"><img src="<?php echo e(asset('website/images/1x/Articles-img-2.png')); ?>" class="card-img-top" alt="..."></a>
-                    <div class="card-body">
-                        <h6 class="card-text">john Watson</h6>
-                        <h6 class="card-text">And</h6>
-                        <h6 class="card-text">Julie Williams</h6>
-                    </div>
-                  </div>
-            </div>
-            <div class="col-lg-4 col-sm-6 mt-4 wow animate__delay-1s animated fadeInLeft" data-wow-duration="1s" data-wow-delay="0.5s">
-                <div class="card">
-                    <a href="<?php echo e(route('blog-details')); ?>"><img src="<?php echo e(asset('website/images/1x/Articles-img-3.png')); ?>" class="card-img-top" alt="..."></a>
-                    <div class="card-body">
-                        <h6 class="card-text">john Watson</h6>
-                        <h6 class="card-text">And</h6>
-                        <h6 class="card-text">Julie Williams</h6>
-                    </div>
-                  </div>
-            </div>
-            <div class="col-lg-4 col-sm-6 mt-4 wow animate__delay-1s animated fadeInRight" data-wow-duration="1s" data-wow-delay="0.5s">
-                <div class="card">
-                    <a href="<?php echo e(route('blog-details')); ?>"><img src="<?php echo e(asset('website/images/1x/Articles-img-1.png')); ?>" class="card-img-top" alt="..."></a>
-                    <div class="card-body">
-                        <h6 class="card-text">john Watson</h6>
-                        <h6 class="card-text">And</h6>
-                        <h6 class="card-text">Julie Williams</h6>
-                    </div>
-                  </div>
-            </div>
-            <div class="col-lg-4 col-sm-6 mt-4 wow animate__delay-1s animated fadeInRight" data-wow-duration="1s" data-wow-delay="0.5s">
-                <div class="card">
-                    <a href="<?php echo e(route('blog-details')); ?>"><img src="<?php echo e(asset('website/images/1x/Articles-img-2.png')); ?>" class="card-img-top" alt="..."></a>
-                    <div class="card-body">
-                        <h6 class="card-text">john Watson</h6>
-                        <h6 class="card-text">And</h6>
-                        <h6 class="card-text">Julie Williams</h6>
-                    </div>
-                  </div>
-            </div>
-            <div class="col-lg-4 col-sm-6 mt-4 wow animate__delay-1s animated fadeInRight" data-wow-duration="1s" data-wow-delay="0.5s">
-                <div class="card">
-                    <a href="<?php echo e(route('blog-details')); ?>"><img src="<?php echo e(asset('website/images/1x/Articles-img-3.png')); ?>" class="card-img-top" alt="..."></a>
-                    <div class="card-body">
-                        <h6 class="card-text">john Watson</h6>
-                        <h6 class="card-text">And</h6>
-                        <h6 class="card-text">Julie Williams</h6>
-                    </div>
-                  </div>
-            </div>
-            <div class="col-lg-4 col-sm-6 mt-4 wow animate__delay-1s animated fadeInLeft" data-wow-duration="1s" data-wow-delay="0.5s">
-                <div class="card">
-                    <a href="<?php echo e(route('blog-details')); ?>"><img src="<?php echo e(asset('website/images/1x/Articles-img-1.png')); ?>" class="card-img-top" alt="..."></a>
-                    <div class="card-body">
-                        <h6 class="card-text">john Watson</h6>
-                        <h6 class="card-text">And</h6>
-                        <h6 class="card-text">Julie Williams</h6>
-                    </div>
-                  </div>
-            </div>
-            <div class="col-lg-4 col-sm-6 mt-4 wow animate__delay-1s animated fadeInLeft" data-wow-duration="1s" data-wow-delay="0.5s">
-                <div class="card">
-                    <a href="<?php echo e(route('blog-details')); ?>"><img src="<?php echo e(asset('website/images/1x/Articles-img-2.png')); ?>" class="card-img-top" alt="..."></a>
-                    <div class="card-body">
-                        <h6 class="card-text">john Watson</h6>
-                        <h6 class="card-text">And</h6>
-                        <h6 class="card-text">Julie Williams</h6>
-                    </div>
-                  </div>
-            </div>
-            <div class="col-lg-4 col-sm-6 mt-4 wow animate__delay-1s animated fadeInLeft" data-wow-duration="1s" data-wow-delay="0.5s">
-                <div class="card">
-                    <a href="<?php echo e(route('blog-details')); ?>"><img src="<?php echo e(asset('website/images/1x/Articles-img-3.png')); ?>" class="card-img-top" alt="..."></a>
-                    <div class="card-body">
-                        <h6 class="card-text">john Watson</h6>
-                        <h6 class="card-text">And</h6>
-                        <h6 class="card-text">Julie Williams</h6>
-                    </div>
-                  </div>
+            <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
             </div>
         </div>
        </div>

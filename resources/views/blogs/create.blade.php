@@ -21,71 +21,78 @@
 @endsection
 
 @section('content')
-
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 <div class="container-fluid">
   <div class="row">
     <div class="col-sm-12">
         <div class="card">
             <div class="card-header">
-                <h5>Edit</h5>
-
+                <h5>Create</h5>
             </div>
             {{-- <form class="form theme-form"> --}}
-                <form class="form theme-form"id="" action="{{ route("blogUpdate",$edit_data->id) }}" enctype="multipart/form-data" method="post">
+                <form class="form theme-form"id="" action="{{ route("blogAdd") }}" enctype="multipart/form-data" method="post">
                     @csrf
                 <div class="card-body">
                     <div class="row">
                         <div class="col">
                             <div class="mb-3">
-                                <label for="exampleFormControlInput10">Title</label>
-                                <input name="title" value="{{ $edit_data->title }}" class="form-control btn-square" id="exampleFormControlInput10" type="text" placeholder="Title">
+                                <label for="exampleFormControlInput10">Groom Name.*</label>
+                                <input name="men" class="form-control btn-square" id="exampleFormControlInput10" type="text" placeholder="Groom">
+                                @error('men')
+                                    <p class="help-block" style="color: red">
+                                        {{ $errors->first('men') }}
+                                    </p>
+                                @enderror
                             </div>
-                            @error('title')
-                            <p class="help-block" style="color: red">
-                                {{ $errors->first('title') }}
-                            </p>
-                        @enderror
                         </div>
                     </div>
                     <div class="row">
-                        <div class="col-md-12">
-                            @if ($edit_data->image != null)
-                         <img src="{{ asset('storage/uploads/cms/' . $edit_data->image) }}" alt="image" style="width:120px; height:80px;">
-                        @else
-                        <img src="{{ (!empty($edit_data->image))?
-                            asset('storage/uploads/cms/'.$edit_data->image):asset('storage/uploads/No-image.jpg') }}" style="width:80px; height:80px;">
-                        @endif
-                     </div>
-                        <div class="col-md-12">
-                            <div class="mb-3 row">
-                                <label class="col-sm-3 col-form-label">Upload File</label>
-                                <div class="col-sm-9">
-                                    <input name="image" id="image" class="form-control" type="file">
-                                </div>
-
+                        <div class="col">
+                            <div class="mb-3">
+                                <label for="exampleFormControlInput10">Bride Name.*</label>
+                                <input name="women" class="form-control btn-square" id="exampleFormControlInput10" type="text" placeholder="Bride">
+                                @error('women')
+                                    <p class="help-block" style="color: red">
+                                        {{ $errors->first('women') }}
+                                    </p>
+                                @enderror
                             </div>
-
                         </div>
-                 </div>
-
+                    </div>
+                    <div class="row">
+                        <div class="col">
+                            <div class="mb-3 row">
+                                <label class="col-sm-3 col-form-label">Upload File.*</label>
+                                <div class="col-sm-9">
+                                    <input name="image" class="form-control" type="file">
+                                    @error('image')
+                                    <p class="help-block" style="color: red">
+                                        {{ $errors->first('image') }}
+                                    </p>
+                                @enderror
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                     <div class="row">
                         <div class="col">
                             <div class="mb-3 mb-0">
+                                {{-- ckeditor --}}
                                 <label for="exampleFormControlTextarea14">Enter Description</label>
-                                <textarea value="" name="content" class="ckeditor form-control btn-square" id="exampleFormControlTextarea14" rows="3">{{ $edit_data->content }}</textarea>
+                                <textarea name="content" class="ckeditor form-control btn-square" id="exampleFormControlTextarea14" rows="3"></textarea>
+
+                                @error('content')
+                                    <p class="help-block" style="color: red">
+                                        {{ $errors->first('content') }}
+                                    </p>
+                                @enderror
+
                             </div>
-                            @error('content')
-                            <p class="help-block" style="color: red">
-                                {{ $errors->first('content') }}
-                            </p>
-                        @enderror
                         </div>
                     </div>
 
                 </div>
                 <div class="card-footer">
-                    <button class="btn btn-primary" type="submit">Update</button>
+                    <button class="btn btn-primary" type="submit">Submit</button>
                     {{-- <input class="btn btn-light" type="reset" value="Cancel"> --}}
                 </div>
             </form>
@@ -96,19 +103,6 @@
 @endsection
 
 @section('script')
-
-<script type="text/javascript">
-    $(document).ready(function(){
-      $('#image').change(function(e){
-        var reader = new FileReader();
-        reader.onload = function(e){
-          $('#showImage').attr('src',e.target.result);
-        }
-        reader.readAsDataURL(e.target.files['0']);
-      });
-    });
-  </script>
-
 <script src="{{asset('assets/js/datepicker/date-picker/datepicker.js')}}"></script>
 <script src="{{asset('assets/js/datepicker/date-picker/datepicker.en.js')}}"></script>
 <script src="{{asset('assets/js/datepicker/date-picker/datepicker.custom.js')}}"></script>

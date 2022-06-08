@@ -26,7 +26,7 @@
                     </div>
                     <div class="Wed-Art-Div">
                         <div class="couple-img-wed">
-                            <img src="{{asset('website/images/1x/engagement-banner.png')}}" alt="">
+                            <img src="{{ asset('storage/uploads/cms/' . $engagement_banner->image) }}" alt="">
                         </div>
 
                     </div>
@@ -34,8 +34,8 @@
             </div>
 
             <div class="col-lg-6 col-sm-6 mb-5 overlay-image-text wow  animated fadeInRight" data-wow-duration="1s" data-wow-delay="0.5s">
-                <h1 class="couple-text pt-5">South Dakota</h1>
-                <h1 class="couple-text">bride <span>Engagements</span></h1>
+                <h1 class="couple-text pt-5">{{$engagement_banner->title1}}</h1>
+                <h1 class="couple-text">{{$engagement_banner->title2}}<span>{{$engagement_banner->title3}}</span></h1>
                 <div>
                     <input placeholder="Engagement Date" class="textbox-n" type="text" onfocus="(this.type='date')" onblur="(this.type='text')" id="date" />
                     <!-- <input type="date" placeholder="Wedding Date"> -->

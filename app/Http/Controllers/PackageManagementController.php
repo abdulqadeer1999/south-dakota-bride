@@ -139,7 +139,7 @@ class PackageManagementController extends Controller
         $cms->mid_details = $request->mid_details;
         $cms->deatails = $request->deatails;
         $cms->save();
-        
+
         $notification = array('message' =>'Your data updateed Successfully ' , 'alert-type'=>'success' );
         return redirect()->route('Package')->with($notification);
 

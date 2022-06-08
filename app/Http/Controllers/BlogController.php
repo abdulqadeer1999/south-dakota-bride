@@ -17,7 +17,7 @@ class BlogController extends Controller
     {
         // dd('here');
         $getCMS = Blog::all();
-        return view('blog.index',get_defined_vars());
+        return view('blogs.index',get_defined_vars());
     }
 
     /**
@@ -28,7 +28,7 @@ class BlogController extends Controller
     public function create()
     {
         // dd('here');
-        return view('blog.create');
+        return view('blogs.create');
 
     }
 
@@ -43,13 +43,14 @@ class BlogController extends Controller
         // dd('here');
         // dd($request->all());
         $this->validate($request, [
-            'title' => "required|max:255",
-            // 'image' => "required",
+            'men' => "required|max:255",
+            'women' => "required|max:255",
             'content' => "required",
         ]);
 
         $cms = new Blog();
-        $cms->title = $request->title;
+        $cms->men = $request->men;
+        $cms->women = $request->women;
         $cms->content = $request->content;
         if($image = $request->file("image")) {
             $imageName = $image->getClientOriginalName();
@@ -59,7 +60,7 @@ class BlogController extends Controller
         }
         $cms->save();
         $notification = array('message' =>'Your data Inserted Successfully ' , 'alert-type'=>'success' );
-        return redirect()->route('blog')->with($notification);
+        return redirect()->route('blogs')->with($notification);
     }
     /**
      * Display the specified resource.
@@ -82,7 +83,7 @@ class BlogController extends Controller
     {
          // dd($id);
          $edit_data = Blog::find($id);
-         return view('blog.edit',get_defined_vars());
+         return view('blogs.edit',get_defined_vars());
     }
 
     /**
@@ -95,12 +96,13 @@ class BlogController extends Controller
     public function update(Request $request, $id)
     {
         $this->validate($request, [
-            'title' => "required|max:255",
-            // 'image' => "required",
+            'men' => "required|max:255",
+            'women' => "required|max:255",
             'content' => "required",
         ]);
         $cms = Blog::findOrFail($id);
-        $cms->title = $request->title;
+        $cms->men = $request->men;
+        $cms->women = $request->women;
         $cms->content = $request->content;
         if($image = $request->file("image")) {
             $imageName = $image->getClientOriginalName();
@@ -111,7 +113,7 @@ class BlogController extends Controller
 
         $cms->save();
         $notification = array('message' =>'Your data Updated Successfully ' , 'alert-type'=>'success' );
-        return redirect()->route('blog')->with($notification);
+        return redirect()->route('blogs')->with($notification);
     }
 
     /**
@@ -125,7 +127,7 @@ class BlogController extends Controller
         $cms = Blog::find($id);
         Storage::delete('public/uploads/cms/'.$cms->image);
         $cms->delete();
-        return redirect()->route('blog');
+        return redirect()->route('blogs');
     }
 
 

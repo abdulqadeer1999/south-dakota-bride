@@ -43,7 +43,8 @@
                                 <thead>
                                     <tr>
                                         <th>#</th>
-                                        <th>Title</th>
+                                        <th>Groom</th>
+                                        <th>Bride</th>
                                         <th>Image</th>
                                         <th>Content</th>
                                         <th>Created date</th>
@@ -54,7 +55,8 @@
                                     @foreach ($getCMS as $key => $value)
                                         <tr>
                                             <td>{{ $key+1 }}</td>
-                                            <td>{{ $value->title }}</td>
+                                            <td>{{ $value->men }}</td>
+                                            <td>{{ $value->women }}</td>
                                             <td>
                                                     @if ($value->image != null)
                                                     <img src="{{ asset('storage/uploads/cms/' . $value->image) }}" alt="image" style="width:120px; height:80px;">
@@ -64,7 +66,7 @@
                                                         style="width:120px; height:80px;">
                                                     @endif
                                             </td>
-                                            <td>{!! $value->content !!}</td>
+                                            <td>{!!Str::limit($value->content, 40)!!}</td>
                                             <td>{{ date('d-m-Y', strtotime($value->created_at)) }}</td>
                                             <td>
                                                 <button class="btn btn-danger btn-xs for-font-color" type="button" data-original-title="btn btn-danger btn-xs" title=""><a  href="{{ route('blogdestroy', $value->id) }}" id="delete">Delete</a></button>

@@ -31,9 +31,9 @@
                             <div class="col-md-8">
                                 <h5>Page list</h5>
                             </div>
-                            {{-- <div class="col-md-4" align="right">
+                            <div class="col-md-4" align="right">
                                 <a type="button" class="btn btn-primary for-font-color" href="{{ route('PageContent_create') }}"> Create</a>
-                            </div> --}}
+                            </div>
                         </div>
                     </div>
                     <div class="card-body">
@@ -42,11 +42,14 @@
                                 <thead>
                                     <tr>
                                         <th>#</th>
-                                        {{-- <th>Page</th> --}}
                                         <th>Page Name</th>
+                                        {{-- <th>Title1</th>
+                                        <th>Title2</th>
+                                        <th>Title3</th>
+                                        <th>Title4</th> --}}
                                         <th>Image</th>
-                                        <th>Content</th>
-                                        <th>Created date</th>
+                                        <th>Image2</th>
+                                        {{-- <th>Content</th> --}}
                                         <th>Action</th>
                                     </tr>
                                 </thead>
@@ -54,8 +57,11 @@
                                     @foreach ($getCMS as $key => $value)
                                         <tr>
                                            <td>{{ $key+1 }}</td>
-                                           {{-- <td>{{ $value->page }}</td> --}}
-                                           <td>{{ substr($value->title,0) }}</td>
+                                           <td>{{ $value->page }}</td>
+                                           {{-- <td>{{ $value->title1 }}</td>
+                                           <td>{{ $value->title2 }}</td>
+                                           <td>{{ $value->title3 }}</td>
+                                           <td>{{ $value->title4 }}</td> --}}
                                            <td>
                                             @if ($value->image != null)
                                             <img src="{{ asset('storage/uploads/cms/' . $value->image) }}" alt="image" style="width:120px; height:80px;">
@@ -65,9 +71,18 @@
                                                 style="width:120px; height:80px;">
                                             @endif
                                         </td>
-                                            <td>{!!substr($value->content,0,100)!!}.....</td>
+                                        <td>
+                                            @if ($value->image2 != null)
+                                            <img src="{{ asset('storage/uploads/cms/' . $value->image2) }}" alt="image" style="width:120px; height:80px;">
+                                            @else
+                                            <img src="{{ (!empty($Value->image2))?
+                                                asset('storage/uploads/cms/'.$Value->image2):asset('storage/uploads/No-image.jpg') }}"
+                                                style="width:120px; height:80px;">
+                                            @endif
+                                        </td>
+                                            {{-- <td>{!!substr($value->content,0,20)!!}.....</td> --}}
                                             {{-- <td>{{$value->content}}</td> --}}
-                                            <td>{{ date('d-m-Y', strtotime($value->created_at)) }}</td>
+                                            {{-- <td>{{ date('d-m-Y', strtotime($value->created_at)) }}</td> --}}
                                             <td>
                                                 {{-- <button class="btn btn-danger btn-xs for-font-color" type="button" data-original-title="btn btn-danger btn-xs" title=""><a  href="{{ route('PageContent_destroy', $value->id) }}" id="delete">Delete</a></button> --}}
                                                 <button class="btn btn-success btn-xs for-font-color" type="button" data-original-title="btn btn-danger btn-xs" title=""> <a href="{{ route('PageContent_edit', $value->id) }}">Edit</a></button>

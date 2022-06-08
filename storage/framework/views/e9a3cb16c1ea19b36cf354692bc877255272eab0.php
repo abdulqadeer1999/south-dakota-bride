@@ -83,7 +83,7 @@ sidebar-wrapper::-webkit-scrollbar-thumb:hover {
 						<ul class="sidebar-submenu" style="display: <?php echo e(request()->route()->getPrefix() == '/project' ? 'block;' : 'none;'); ?>">
 		                    
 		                    <li><a href="<?php echo e(route('logo')); ?>" class="<?php echo e(Route::currentRouteName()=='logo' ? 'active' : ''); ?>">Logo Management</a></li>
-                            
+                            <li><a href="<?php echo e(route('PageName')); ?>" class="<?php echo e(Route::currentRouteName()=='PageName' ? 'active' : ''); ?>">Page Name</a></li>
                             <li><a href="<?php echo e(route('PageContent')); ?>" class="<?php echo e(Route::currentRouteName()=='PageContent' ? 'active' : ''); ?>">Page Content</a></li>
                             <li><a href="<?php echo e(route('projects')); ?>" class="<?php echo e(Route::currentRouteName()=='projects' ? 'active' : ''); ?>">Sponsor Management</a></li>
                             <li><a href="<?php echo e(route('privacy')); ?>" class="<?php echo e(Route::currentRouteName()=='privacy' ? 'active' : ''); ?>"><?php echo e(trans('Privacy Policy')); ?></a></li>
@@ -95,11 +95,11 @@ sidebar-wrapper::-webkit-scrollbar-thumb:hover {
                     
 
                     <li class="sidebar-list">
-						<a class="sidebar-link sidebar-title <?php echo e(request()->route()->getPrefix() == '/blog' ? 'active' : ''); ?>" href="#"><i data-feather="image"></i><span><?php echo e(trans('Gallery Management')); ?></span>
-							<div class="according-menu"><i class="fa fa-angle-<?php echo e(request()->route()->getPrefix() == '/blog' ? 'down' : 'right'); ?>"></i></div>
+						<a class="sidebar-link sidebar-title <?php echo e(request()->route()->getPrefix() == '/blog' ? 'active' : ''); ?>" href="#"><i data-feather="image"></i><span><?php echo e(trans('Blog Management')); ?></span>
+							<div class="according-menu"><i class="fa fa-angle-<?php echo e(request()->route()->getPrefix() == '/blogs' ? 'down' : 'right'); ?>"></i></div>
 						</a>
 						<ul class="sidebar-submenu" style="display: <?php echo e(request()->route()->getPrefix() == '/blog' ? 'block' : 'none;'); ?>;">
-							<li><a href="<?php echo e(route('blog')); ?>" class="<?php echo e(Route::currentRouteName()=='blog' ? 'active' : ''); ?>">Gallery</a></li>
+							<li><a href="<?php echo e(route('blogs')); ?>"  class="<?php echo e(Route::currentRouteName()=='blog' ? 'active' : ''); ?>">Blogs</a></li>
 						</ul>
 					</li>
 

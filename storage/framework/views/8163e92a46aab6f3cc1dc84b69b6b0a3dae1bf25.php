@@ -10,11 +10,11 @@
 <?php $__env->stopSection(); ?>
 
 <?php $__env->startSection('breadcrumb-title'); ?>
-    <h3>Pages</h3>
+    <h3>Gallery</h3>
 <?php $__env->stopSection(); ?>
 
 <?php $__env->startSection('breadcrumb-items'); ?>
-    <li class="breadcrumb-item">Page </li>
+    <li class="breadcrumb-item">Gallery </li>
     <li class="breadcrumb-item active">list </li>
 <?php $__env->stopSection(); ?>
 
@@ -25,13 +25,14 @@
             <div class="col-sm-12">
                 <div class="card">
                     <div class="card-header">
-
                         <div class="row">
                             <div class="col-md-8">
-                                <h5>Page list</h5>
+                                <h5>Gallery list</h5>
                             </div>
                             <div class="col-md-4" align="right">
-                                <a type="button" class="btn btn-primary for-font-color" href="<?php echo e(route('PageContent_create')); ?>"> Create</a>
+                                
+                                <a type="button" class="btn btn-primary" href="<?php echo e(route('blogCreate')); ?>">
+                                     Add</a>
                             </div>
                         </div>
                     </div>
@@ -41,44 +42,34 @@
                                 <thead>
                                     <tr>
                                         <th>#</th>
-                                        <th>Page Name</th>
-                                        
+                                        <th>Groom</th>
+                                        <th>Bride</th>
                                         <th>Image</th>
-                                        <th>Image2</th>
-                                        
+                                        <th>Content</th>
+                                        <th>Created date</th>
                                         <th>Action</th>
                                     </tr>
                                 </thead>
                                 <tbody>
                                     <?php $__currentLoopData = $getCMS; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $key => $value): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
                                         <tr>
-                                           <td><?php echo e($key+1); ?></td>
-                                           <td><?php echo e($value->page); ?></td>
-                                           
-                                           <td>
-                                            <?php if($value->image != null): ?>
-                                            <img src="<?php echo e(asset('storage/uploads/cms/' . $value->image)); ?>" alt="image" style="width:120px; height:80px;">
-                                            <?php else: ?>
-                                            <img src="<?php echo e((!empty($Value->image))?
-                                                asset('storage/uploads/cms/'.$Value->image):asset('storage/uploads/No-image.jpg')); ?>"
-                                                style="width:120px; height:80px;">
-                                            <?php endif; ?>
-                                        </td>
-                                        <td>
-                                            <?php if($value->image2 != null): ?>
-                                            <img src="<?php echo e(asset('storage/uploads/cms/' . $value->image2)); ?>" alt="image" style="width:120px; height:80px;">
-                                            <?php else: ?>
-                                            <img src="<?php echo e((!empty($Value->image2))?
-                                                asset('storage/uploads/cms/'.$Value->image2):asset('storage/uploads/No-image.jpg')); ?>"
-                                                style="width:120px; height:80px;">
-                                            <?php endif; ?>
-                                        </td>
-                                            
-                                            
-                                            
+                                            <td><?php echo e($key+1); ?></td>
+                                            <td><?php echo e($value->men); ?></td>
+                                            <td><?php echo e($value->women); ?></td>
                                             <td>
-                                                
-                                                <button class="btn btn-success btn-xs for-font-color" type="button" data-original-title="btn btn-danger btn-xs" title=""> <a href="<?php echo e(route('PageContent_edit', $value->id)); ?>">Edit</a></button>
+                                                    <?php if($value->image != null): ?>
+                                                    <img src="<?php echo e(asset('storage/uploads/cms/' . $value->image)); ?>" alt="image" style="width:120px; height:80px;">
+                                                    <?php else: ?>
+                                                    <img src="<?php echo e((!empty($Value->image))?
+                                                        asset('storage/uploads/cms/'.$Value->image):asset('storage/uploads/No-image.jpg')); ?>"
+                                                        style="width:120px; height:80px;">
+                                                    <?php endif; ?>
+                                            </td>
+                                            <td><?php echo Str::limit($value->content, 40); ?></td>
+                                            <td><?php echo e(date('d-m-Y', strtotime($value->created_at))); ?></td>
+                                            <td>
+                                                <button class="btn btn-danger btn-xs for-font-color" type="button" data-original-title="btn btn-danger btn-xs" title=""><a  href="<?php echo e(route('blogdestroy', $value->id)); ?>" id="delete">Delete</a></button>
+                                                <button class="btn btn-success btn-xs for-font-color" type="button" data-original-title="btn btn-danger btn-xs" title=""> <a href="<?php echo e(route('blogEdit', $value->id)); ?>">Edit</a></button>
                                              </td>
                                         </tr>
                                     <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
@@ -102,4 +93,4 @@
     <script src="<?php echo e(asset('assets/js/product-list-custom.js')); ?>"></script>
 <?php $__env->stopSection(); ?>
 
-<?php echo $__env->make('layouts.simple.master', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?><?php /**PATH C:\xampp\htdocs\south-dakota-bride\resources\views/pagecontent/index.blade.php ENDPATH**/ ?>
+<?php echo $__env->make('layouts.simple.master', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?><?php /**PATH C:\xampp\htdocs\south-dakota-bride\resources\views/blogs/index.blade.php ENDPATH**/ ?>

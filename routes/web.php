@@ -174,12 +174,12 @@ Route::middleware(['preventBackHistory','isAdmin'])->group(function () {
         Route::post('PageName_update/{id}', [PageNameController::class, 'update'])->name('PageName_update');
         Route::get('PageName_destroy/{id}', [PageNameController::class, 'destroy'])->name('PageName_destroy');
 
-        Route::get('PageContent', [FrontendController::class, 'index'])->name('PageContent');
-        Route::get('PageContent_create', [FrontendController::class, 'create'])->name('PageContent_create');
-        Route::post('PageContent_store', [FrontendController::class, 'store'])->name('PageContent_store');
-        Route::get('PageContent_edit/{id}', [FrontendController::class, 'edit'])->name('PageContent_edit');
-        Route::post('PageContent_update/{id}', [FrontendController::class, 'update'])->name('PageContent_update');
-        Route::get('PageContent_destroy/{id}', [FrontendController::class, 'destroy'])->name('PageContent_destroy');
+        Route::get('PageContent', [CmsController::class, 'projects_Index'])->name('PageContent');
+        Route::get('PageContent_create', [CmsController::class, 'project_create'])->name('PageContent_create');
+        Route::post('PageContent_store', [CmsController::class, 'project_add'])->name('PageContent_store');
+        Route::get('PageContent_edit/{id}', [CmsController::class, 'project_edit'])->name('PageContent_edit');
+        Route::post('PageContent_update/{id}', [CmsController::class, 'project_update'])->name('PageContent_update');
+        Route::get('PageContent_destroy/{id}', [CmsController::class, 'project_destroy'])->name('PageContent_destroy');
 
         Route::get('logo', [LogoManagerController::class, 'logo_Index'])->name('logo');
         Route::get('logoCreate', [LogoManagerController::class, 'logo_create'])->name('logoCreate');
@@ -227,7 +227,7 @@ Route::middleware(['preventBackHistory','isAdmin'])->group(function () {
 
     Route::prefix('blog')->group(function () {
 
-        Route::get('blog', [BlogController::class, 'index'])->name('blog');
+        Route::get('blogs', [BlogController::class, 'index'])->name('blogs');
         Route::get('blogCreate', [BlogController::class, 'create'])->name('blogCreate');
         Route::post('blogAdd', [BlogController::class, 'store'])->name('blogAdd');
         Route::get('blogEdit/{id}', [BlogController::class, 'edit'])->name('blogEdit');
@@ -448,7 +448,7 @@ Route::get('/engagement-details',[WebsiteController::class,'engagementDetails'])
 Route::get('/popular_vendors',[WebsiteController::class,'popularVendors'])->name('popular_vendors');
 Route::get('/planners',[WebsiteController::class,'planners'])->name('planners');
 Route::get('/blog',[WebsiteController::class,'blog'])->name('blog');
-Route::get('/blog-details',[WebsiteController::class,'blogDetails'])->name('blog-details');
+Route::get('/blog-details/{id}',[WebsiteController::class,'blogDetails'])->name('blog-details');
 Route::get('/events',[WebsiteController::class,'events'])->name('events');
 Route::get('/event-details',[WebsiteController::class,'eventDetails'])->name('event-details');
 Route::get('/signin',[WebsiteController::class,'signin'])->name('signin');

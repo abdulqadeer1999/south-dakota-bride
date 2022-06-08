@@ -13,10 +13,10 @@
                             </div>
                             <div class="line-center">
                                 <ul>
-                                    <li><a href="https://www.facebook.com" target="_blank"><i class="fa-brands fa-facebook-f"></i></a></li>
-                                    <li><a href="https://www.instagram.com" target="_blank"><i class="fa-brands fa-instagram"></i></a></li>
-                                    <li><a href="https://www.twitter.com" target="_blank"><i class="fa-brands fa-twitter"></i></a></li>
-                                    <li><a href="https://www.youtube.com" target="_blank"><i class="fa-brands fa-youtube"></i></a></li>
+                                    <li><a href="{{$facebook[0]->social_media ?? ''}}" target="_blank"><i class="fa-brands fa-facebook-f"></i></a></li>
+                                    <li><a href="{{$instagram[0]->social_media ?? ''}}" target="_blank"><i class="fa-brands fa-instagram"></i></a></li>
+                                    <li><a href="{{$twitter[0]->social_media ?? ''}}" target="_blank"><i class="fa-brands fa-twitter"></i></a></li>
+                                    <li><a href="{{$youtube[0]->social_media ?? ''}}" target="_blank"><i class="fa-brands fa-youtube"></i></a></li>
                                 </ul>
                             </div>
                             <div class="line-before">
@@ -26,7 +26,7 @@
                     </div>
                     <div class="Wed-Art-Div">
                         <div class="couple-img-wed">
-                            <img src="{{asset('website/images/1x/event-banner.png')}}" alt="">
+                            <img src="{{ asset('storage/uploads/cms/' . $events_banner->image) }}" alt="">
                         </div>
 
                     </div>
@@ -34,7 +34,7 @@
             </div>
 
             <div class="col-lg-6 col-sm-6 mb-5 overlay-image-text">
-                <h1 class="couple-text pt-5 wow  animated fadeInRight" data-wow-duration="1s" data-wow-delay="0.5s">upcoming events</h1>
+                <h1 class="couple-text pt-5 wow  animated fadeInRight" data-wow-duration="1s" data-wow-delay="0.5s">{{$events_banner->title}}</h1>
 
 
 

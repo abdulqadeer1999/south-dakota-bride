@@ -39,7 +39,6 @@
                                     <option selected disabled>Select Page</option>
                                     @foreach ( $getpages as  $page)
                                     <option value="{{ $page->id }}">{{ $page->page_name }}</option>
-
                                     @endforeach
                                  </select>
                                 @error('page')
@@ -53,11 +52,76 @@
                     <div class="row">
                         <div class="col">
                             <div class="mb-3">
-                                <label for="exampleFormControlInput10">Title.*</label>
+                                <label for="exampleFormControlInput10">Title*</label>
                                 <input name="title" class="form-control btn-square" id="exampleFormControlInput10" type="text" placeholder="Title">
                                 @error('title')
                                     <p class="help-block" style="color: red">
                                         {{ $errors->first('title') }}
+                                    </p>
+                                @enderror
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col">
+                            <div class="mb-3">
+                                <label for="exampleFormControlInput10">Title 1.*</label>
+                                <input name="title1" class="form-control btn-square" id="exampleFormControlInput10" type="text" placeholder="Title">
+                                @error('title1')
+                                    <p class="help-block" style="color: red">
+                                        {{ $errors->first('title1') }}
+                                    </p>
+                                @enderror
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col">
+                            <div class="mb-3">
+                                <label for="exampleFormControlInput10">Title 2.*</label>
+                                <input name="title2" class="form-control btn-square" id="exampleFormControlInput10" type="text" placeholder="Title">
+                                @error('title2')
+                                    <p class="help-block" style="color: red">
+                                        {{ $errors->first('title2') }}
+                                    </p>
+                                @enderror
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col">
+                            <div class="mb-3">
+                                <label for="exampleFormControlInput10">Title 3.*</label>
+                                <input name="title3" class="form-control btn-square" id="exampleFormControlInput10" type="text" placeholder="Title">
+                                @error('title3')
+                                    <p class="help-block" style="color: red">
+                                        {{ $errors->first('title3') }}
+                                    </p>
+                                @enderror
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col">
+                            <div class="mb-3">
+                                <label for="exampleFormControlInput10">Title 4.*</label>
+                                <input name="title4" class="form-control btn-square" id="exampleFormControlInput10" type="text" placeholder="Title">
+                                @error('title4')
+                                    <p class="help-block" style="color: red">
+                                        {{ $errors->first('title4') }}
+                                    </p>
+                                @enderror
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col">
+                            <div class="mb-3">
+                                <label for="exampleFormControlInput10">Section Name.*</label>
+                                <input name="section_name" class="form-control btn-square" id="exampleFormControlInput10" type="text" placeholder="Section Name">
+                                @error('section_name')
+                                    <p class="help-block" style="color: red">
+                                        {{ $errors->first('section_name') }}
                                     </p>
                                 @enderror
                             </div>
@@ -72,6 +136,21 @@
                                     @error('image')
                                     <p class="help-block" style="color: red">
                                         {{ $errors->first('image') }}
+                                    </p>
+                                @enderror
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col">
+                            <div class="mb-3 row">
+                                <label class="col-sm-3 col-form-label">Background Image File.*</label>
+                                <div class="col-sm-9">
+                                    <input name="image2" class="form-control" type="file">
+                                    @error('image2')
+                                    <p class="help-block" style="color: red">
+                                        {{ $errors->first('image2') }}
                                     </p>
                                 @enderror
                                 </div>

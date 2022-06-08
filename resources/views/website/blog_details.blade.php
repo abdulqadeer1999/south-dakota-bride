@@ -26,7 +26,7 @@
                     </div>
                     <div >
                         <div class="couple-img-wed">
-                            <img src="{{asset('website/images/1x/Articles-inner.png')}}" alt="">
+                            <img src="{{ asset('storage/uploads/cms/' . $details->image) }}" alt="">
                         </div>
 
                     </div>
@@ -34,25 +34,9 @@
             </div>
 
             <div class="col-lg-6 col-sm-12 wow  animated fadeInRight" data-wow-duration="1s" data-wow-delay="0.5s">
-                <h1 class="couple-text pt-5">john watson and</h1>
-                <h1 class="couple-text">julie Williams</h1>
-                <p class="art-inner-para">Lorem ipsum dolor sit amet consectetur adipisicing elit. Officiis sequi impedit
-                     deleniti. Cum consequuntur quisquam placeat est libero quos eaque,
-                    laudantium ad, minus minima, nesciunt fuga saepe consectetur dolore quas!
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Officiis sequi impedit
-                    deleniti. Cum consequuntur quisquam placeat est libero quos eaque,
-                   laudantium ad, minus minima, nesciunt fuga saepe consectetur dolore quas!
-                   Lorem ipsum dolor sit amet consectetur adipisicing elit. Officiis sequi impedit
-                   deleniti. Cum consequuntur quisquam placeat est libero quos eaque,
-                  laudantium ad, minus minima, nesciunt fuga saepe consectetur dolore quas!
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Officiis sequi impedit
-                  deleniti. Cum consequuntur quisquam placeat est libero quos eaque.
-                  laudantium ad, minus minima, nesciunt fuga saepe consectetur dolore quas!
-                   Lorem ipsum dolor sit amet consectetur adipisicing elit. Officiis sequi impedit
-                   deleniti. Cum consequuntur quisquam placeat est libero quos eaque,
-                  laudantium ad, minus minima, nesciunt fuga saepe consectetur dolore quas!
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Officiis sequi impedit
-                  deleniti. Cum consequuntur quisquam placeat est libero quos eaque.
+                <h1 class="couple-text pt-5">{{$details->men}}</h1>
+                <h1 class="couple-text">{{$details->women}}</h1>
+                <p class="art-inner-para">{!! $details->content !!}
                  </p>
 
 

@@ -3,6 +3,8 @@
 namespace App\Http\Controllers\Frontend;
 
 use App\Http\Controllers\Controller;
+use App\Models\Blog;
+use App\Models\cms;
 use App\Models\Config;
 use App\Models\PrivacyPolicy;
 use App\Models\sociallink;
@@ -40,39 +42,45 @@ class WebsiteController extends Controller
         }
     }
     public function index(){
-        // $copyright = Config::first();
-        $facebook = Sociallink::where('type','1')->get();
-        $instagram = Sociallink::where('type','2')->get();
-        $twitter = Sociallink::where('type','3')->get();
-        $youtube = Sociallink::where('type','4')->get();
+        $banner = cms::where('page','1')->first();
+        // return $banner;
+        $about = cms::where('page','1')->where('section_name','AboutSection')->first();
+        // return $about;
         return view('website.index',get_defined_vars());
     }
     public function wedding(){
-        return view('website.wedding');
+        $wedding_banner = cms::where('page','2')->first();
+        return view('website.wedding',get_defined_vars());
     }
     public function weddingDetails(){
         return view('website.wedding_details');
     }
     public function engagement(){
-        return view('website.engagement');
+        $engagement_banner = cms::where('page','3')->first();
+        return view('website.engagement',get_defined_vars());
     }
     public function engagementDetails(){
         return view('website.engagement_details');
     }
     public function popularVendors(){
-        return view('website.popular_vendors');
+        $vendors_banner = cms::where('page','4')->first();
+        return view('website.popular_vendors',get_defined_vars());
     }
     public function planners(){
         return view('website.planner');
     }
     public function blog(){
-        return view('website.blog');
+        $blogs = Blog::get();
+        $blog_banner = cms::where('page','7')->first();
+        return view('website.blog',get_defined_vars());
     }
-    public function blogDetails(){
-        return view('website.blog_details');
+    public function blogDetails($id){
+        $details = Blog::where('id',$id)->first();
+        return view('website.blog_details',get_defined_vars());
     }
     public function events(){
-        return view('website.events');
+        $events_banner = cms::where('page','5')->first();
+        return view('website.events',get_defined_vars());
     }
     public function eventDetails(){
         return view('website.event_details');
@@ -84,7 +92,10 @@ class WebsiteController extends Controller
         return view('website.signup');
     }
     public function aboutus(){
-        return view('website.about_us');
+        $about_us = cms::where('page','1')->where('section_name','AboutSection')->first();
+        $banner_image = cms::where('page','6')->first();
+        // return $about_us;
+        return view('website.about_us',get_defined_vars());
     }
     public function register(){
         return view('website.register');

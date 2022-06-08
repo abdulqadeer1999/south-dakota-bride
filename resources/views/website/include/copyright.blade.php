@@ -5,9 +5,9 @@
         <div class="row">
             <div class="col-lg-12 text-center ">
                 <a href="#" target="_blank">
-                    <span class="for-theme-link pt-1">
-                        Copyright @2022 South Dakota Bride. All rights reserved
-                    </span>
+                    <span class="for-theme-link pt-1" style="color:white">
+                        {{$copyright->configuration}} DESIGNED AND DEVELOPED BY<a href="https://designprosusa.com/" target="_blank"> DESIGN PRO USA </a>
+                      </span>
                 </a>
             </div>
         </div>

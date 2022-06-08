@@ -83,7 +83,7 @@ sidebar-wrapper::-webkit-scrollbar-thumb:hover {
 						<ul class="sidebar-submenu" style="display: {{ request()->route()->getPrefix() == '/project' ? 'block;' : 'none;' }}">
 		                    {{-- <li><a href="{{route('projects')}}" class="{{ Route::currentRouteName()=='projects' ? 'active' : '' }}">{{ trans('Testimonial') }}</a></li> --}}
 		                    <li><a href="{{route('logo')}}" class="{{ Route::currentRouteName()=='logo' ? 'active' : '' }}">Logo Management</a></li>
-                            {{-- <li><a href="{{route('PageName')}}" class="{{ Route::currentRouteName()=='PageName' ? 'active' : '' }}">Page Name</a></li> --}}
+                            <li><a href="{{route('PageName')}}" class="{{ Route::currentRouteName()=='PageName' ? 'active' : '' }}">Page Name</a></li>
                             <li><a href="{{route('PageContent')}}" class="{{ Route::currentRouteName()=='PageContent' ? 'active' : '' }}">Page Content</a></li>
                             <li><a href="{{route('projects')}}" class="{{ Route::currentRouteName()=='projects' ? 'active' : '' }}">Sponsor Management</a></li>
                             <li><a href="{{route('privacy')}}" class="{{ Route::currentRouteName()=='privacy' ? 'active' : '' }}">{{ trans('Privacy Policy') }}</a></li>
@@ -95,11 +95,11 @@ sidebar-wrapper::-webkit-scrollbar-thumb:hover {
                     {{-- ==== Gallery B L O G WORK ===  --}}
 
                     <li class="sidebar-list">
-						<a class="sidebar-link sidebar-title {{request()->route()->getPrefix() == '/blog' ? 'active' : '' }}" href="#"><i data-feather="image"></i><span>{{ trans('Gallery Management') }}</span>
-							<div class="according-menu"><i class="fa fa-angle-{{request()->route()->getPrefix() == '/blog' ? 'down' : 'right' }}"></i></div>
+						<a class="sidebar-link sidebar-title {{request()->route()->getPrefix() == '/blog' ? 'active' : '' }}" href="#"><i data-feather="image"></i><span>{{ trans('Blog Management') }}</span>
+							<div class="according-menu"><i class="fa fa-angle-{{request()->route()->getPrefix() == '/blogs' ? 'down' : 'right' }}"></i></div>
 						</a>
 						<ul class="sidebar-submenu" style="display: {{request()->route()->getPrefix() == '/blog' ? 'block' : 'none;' }};">
-							<li><a href="{{route('blog')}}" class="{{ Route::currentRouteName()=='blog' ? 'active' : '' }}">Gallery</a></li>
+							<li><a href="{{route('blogs')}}"  class="{{ Route::currentRouteName()=='blog' ? 'active' : '' }}">Blogs</a></li>
 						</ul>
 					</li>
 

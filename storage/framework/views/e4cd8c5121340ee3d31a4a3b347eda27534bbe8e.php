@@ -12,10 +12,10 @@
                             </div>
                             <div class="line-center">
                                 <ul>
-                                    <li><a href="https://www.facebook.com" target="_blank"><i class="fa-brands fa-facebook-f"></i></a></li>
-                                    <li><a href="https://www.instagram.com" target="_blank"><i class="fa-brands fa-instagram"></i></a></li>
-                                    <li><a href="https://www.twitter.com" target="_blank"><i class="fa-brands fa-twitter"></i></a></li>
-                                    <li><a href="https://www.youtube.com" target="_blank"><i class="fa-brands fa-youtube"></i></a></li>
+                                    <li><a href="<?php echo e($facebook[0]->social_media ?? ''); ?>" target="_blank"><i class="fa-brands fa-facebook-f"></i></a></li>
+                                    <li><a href="<?php echo e($instagram[0]->social_media ?? ''); ?>" target="_blank"><i class="fa-brands fa-instagram"></i></a></li>
+                                    <li><a href="<?php echo e($twitter[0]->social_media ?? ''); ?>" target="_blank"><i class="fa-brands fa-twitter"></i></a></li>
+                                    <li><a href="<?php echo e($youtube[0]->social_media ?? ''); ?>" target="_blank"><i class="fa-brands fa-youtube"></i></a></li>
                                 </ul>
                             </div>
                             <div class="line-before">
@@ -25,7 +25,7 @@
                     </div>
                     <div class="Wed-Art-Divs">
                         <div class="couple-img-wed h-100">
-                            <img src="<?php echo e(asset('website/images/1x/vendors-banner.png')); ?>" alt="">
+                            <img src="<?php echo e(asset('storage/uploads/cms/' . $vendors_banner->image)); ?>" alt="">
                         </div>
 
                     </div>
@@ -33,10 +33,11 @@
             </div>
 
             <div class="col-lg-6 col-sm-6 mb-5 overlay-image-text wow animated fadeInRight pt-2" data-wow-duration="1s" data-wow-delay="0.5s">
-                <h1 class="couple-text-wed pt-2">vendors</h1>
+                <h1 class="couple-text-wed pt-2"><?php echo e($vendors_banner->title); ?></h1>
                 <p class="privacy-policy-para ">
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Officiis sequi impedit<br>
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Officiis sequi impedit
+                    <?php echo substr(strip_tags($vendors_banner->description3), 0, 80); ?><br>
+                    <?php echo substr(strip_tags($vendors_banner->description3), 90); ?>
+
                 </p>
                 <div class="row mt-5">
                     <div class="col-lg-6 mb-3">
@@ -129,84 +130,10 @@
                        </div>
             <span class="swiper-notification" aria-live="assertive" aria-atomic="true"></span></div>
         </div>
-        <!-- <div class="sBtns">
-            <div class="swiper-button-prev" tabindex="0" role="button" aria-label="Previous slide" aria-controls="swiper-wrapper-a174190929f27fa5"></div>
-            <div class="swiper-button-next" tabindex="0" role="button" aria-label="Next slide" aria-controls="swiper-wrapper-a174190929f27fa5"></div>
-        </div> -->
+
     </div>
 </section>
-<!-- <section class="slider-section">
-    <h1 class="couple-text-wed pt-5 text-center wow animated bounceIn" data-wow-duration="1s" data-wow-delay="0.5s"> Featured Vendors</h1>
-    <div class="csContainer mt-5">
-        <div class="container">
-            <div class="swiper-container swiper-container-initialized swiper-container-horizontal swiper-container-pointer-events">
-                <div class="swiper-wrapper " id="swiper-wrapper-7c478a54be7457d5" aria-live="off" style="transform: translate3d(-2126.67px, 0px, 0px); transition-duration: 0ms;"><div class="swiper-slide swiper-slide-duplicate" data-swiper-slide-index="0" role="group" aria-label="1 / 3" style="width: 415.333px; margin-right: 10px;">
-                            <div class="card mb-4 mt-5">
-                                <div class="Slider">
-                                    <img src="../images/1x/vendor-slider-img.png" alt="">
-                                </div>
-                            </div>
-                    </div><div class="swiper-slide swiper-slide-duplicate swiper-slide-duplicate-prev" data-swiper-slide-index="1" role="group" aria-label="2 / 3" style="width: 415.333px; margin-right: 10px;">
-                       <div class="card mb-4 mt-5">
-                        <div class="Features-images">
-                            <img src="../images/1x/vendor-slider-img2.png" alt="">
-                        </div>
-                       </div>
-                    </div><div class="swiper-slide swiper-slide-duplicate swiper-slide-duplicate-active" data-swiper-slide-index="2" role="group" aria-label="3 / 3" style="width: 415.333px; margin-right: 10px;">
-                        <div class="card mb-4 mt-5">
-                            <div class="Features-images">
-                                <img src="../images/1x/vendor-slider-img1.png" alt="">
-                            </div>
-                        </div>
-                    </div>
-                    <div class="swiper-slide swiper-slide-duplicate-next" data-swiper-slide-index="0" role="group" aria-label="1 / 3" style="width: 415.333px; margin-right: 10px;">
-                            <div class="card mb-4 mt-5">
-                                <div class="Features-images">
-                                    <img src="../images/1x/vendor-slider-img.png" alt="">
-                                </div>
-                            </div>
-                    </div>
-                    <div class="swiper-slide swiper-slide-prev" data-swiper-slide-index="1" role="group" aria-label="2 / 3" style="width: 415.333px; margin-right: 10px;">
-                       <div class="card mb-4 mt-5">
-                        <div class="Features-images">
-                            <img src="../images/1x/vendor-slider-img2.png" alt="">
-                        </div>
-                       </div>
-                    </div>
-                    <div class="swiper-slide swiper-slide-active" data-swiper-slide-index="2" role="group" aria-label="3 / 3" style="width: 415.333px; margin-right: 10px;">
-                        <div class="card mb-4 mt-5">
-                            <div class="Features-images">
-                                <img src="../images/1x/vendor-slider-img1.png" alt="">
-                            </div>
-                        </div>
-                    </div>
-                <div class="swiper-slide swiper-slide-duplicate swiper-slide-next" data-swiper-slide-index="0" role="group" aria-label="1 / 3" style="width: 415.333px; margin-right: 10px;">
-                            <div class="card mb-4 mt-5">
-                                <div class="Features-images">
-                                    <img src="../images/1x/vendor-slider-img.png" alt="">
-                                </div>
-                            </div>
-                    </div><div class="swiper-slide swiper-slide-duplicate swiper-slide-duplicate-prev" data-swiper-slide-index="1" role="group" aria-label="2 / 3" style="width: 415.333px; margin-right: 10px;">
-                       <div class="card mb-4 mt-5">
-                        <div class="Features-images">
-                            <img src="../images/1x/vendor-slider-img2.png" alt="">
-                        </div>
-                       </div>
-                    </div><div class="swiper-slide swiper-slide-duplicate swiper-slide-duplicate-active" data-swiper-slide-index="2" role="group" aria-label="3 / 3" style="width: 415.333px; margin-right: 10px;">
-                        <div class="card mb-4 mt-5">
-                            <div class="Features-images">
-                                <img src="../images/1x/vendor-slider-img1.png" alt="">
-                            </div>
-                        </div>
-                    </div></div>
-            <span class="swiper-notification" aria-live="assertive" aria-atomic="true"></span></div>
-        </div>
-        <div class="sBtns">
-            <div class="swiper-button-prev" tabindex="0" role="button" aria-label="Previous slide" aria-controls="swiper-wrapper-7c478a54be7457d5"></div>
-            <div class="swiper-button-next" tabindex="0" role="button" aria-label="Next slide" aria-controls="swiper-wrapper-7c478a54be7457d5"></div>
-        </div>
-    </div>
-</section> -->
+
 <!-- ==============================================COUPLE SECTION  OPEN============================================== -->
 <section class="Couple-Section-wedding">
     <div class="CstDivs container">
