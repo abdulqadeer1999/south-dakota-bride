@@ -31,9 +31,9 @@
                             <div class="col-md-8">
                                 <h5>Settings</h5>
                             </div>
-                            {{-- <div class="col-md-4" align="right">
+                            <div class="col-md-4" align="right">
                                 <a type="button" class="btn btn-primary for-font-color" href="{{ route('congfigrationCreate') }}"> Create</a>
-                            </div> --}}
+                            </div>
                         </div>
                     </div>
                     <div class="card-body">
@@ -42,7 +42,7 @@
                                 <thead>
                                     <tr>
                                         <th>#</th>
-                                        <th>Type</th>
+                                        {{-- <th>Type</th> --}}
                                         <th>Configration</th>
                                         <th>Action</th>
                                     </tr>
@@ -51,8 +51,8 @@
                                     @foreach ($getCMS as $key => $value)
                                         <tr>
                                             <td>{{ $key+1}}</td>
-                                            <td>{{ $value->email_type }}</td>
-                                            <td>{{ $value->email_one }}</td>
+                                            {{-- <td>{{ $value->email_type }}</td> --}}
+                                            <td>{{ $value->configuration }}</td>
                                             <td>
                                                 {{-- <button class="btn btn-danger btn-xs for-font-color" type="button" data-original-title="btn btn-danger btn-xs" title=""><a  href="{{ route('congfigrationdestroy', $value->id) }}" id="delete">Delete</a></button> --}}
 

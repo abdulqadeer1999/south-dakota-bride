@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Frontend;
 
 use App\Http\Controllers\Controller;
+use App\Models\Config;
 use App\Models\PrivacyPolicy;
 use App\Models\sociallink;
 use App\Models\TermsCondition;
@@ -20,7 +21,9 @@ class WebsiteController extends Controller
         $instagram = Sociallink::where('type','2')->get();
         $twitter = Sociallink::where('type','3')->get();
         $youtube = Sociallink::where('type','4')->get();
-        view::share('facebook','instagram','twitter','youtube', $facebook,$instagram,$twitter,$youtube);
+        $copyright = Config::first();
+        view::share(get_defined_vars());
+        // view::share('facebook','instagram','twitter','youtube','copyright',$copyright, $facebook,$instagram,$twitter,$youtube);
     }
 
     public function adminlogin(Request $request){
@@ -38,6 +41,7 @@ class WebsiteController extends Controller
         }
     }
     public function index(){
+        // $copyright = Config::first();
         $facebook = Sociallink::where('type','1')->get();
         $instagram = Sociallink::where('type','2')->get();
         $twitter = Sociallink::where('type','3')->get();

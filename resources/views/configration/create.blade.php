@@ -35,7 +35,7 @@
                     @csrf
                 <div class="card-body">
 
-                    <div class="row">
+                    {{-- <div class="row">
                         <div class="col">
                             <div class="mb-3">
                                 <label for="exampleFormControlInput10">Type.*</label>
@@ -47,22 +47,20 @@
                                 @enderror
                             </div>
                         </div>
-                    </div>
+                    </div> --}}
                     <div class="row">
                         <div class="col">
                             <div class="mb-3">
                                 <label for="exampleFormControlInput10">Copyrights.*</label>
-                                <input name="email_one" class="form-control btn-square" id="exampleFormControlInput10" type="text" placeholder="email one">
-                                @error('email_one')
+                                <input name="configuration" class="form-control btn-square" id="exampleFormControlInput10" type="text" placeholder="Copyright">
+                                @error('configuration')
                                     <p class="help-block" style="color: red">
-                                        {{ $errors->first('email_one') }}
+                                        {{ $errors->first('configuration') }}
                                     </p>
                                 @enderror
                             </div>
                         </div>
                     </div>
-
-
 
                 </div>
                 <div class="card-footer">

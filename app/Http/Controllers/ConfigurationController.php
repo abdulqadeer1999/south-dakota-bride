@@ -42,14 +42,11 @@ class ConfigurationController extends Controller
     {
         // dd($request->all());
         $this->validate($request, [
-            'email_one' => "required|max:255",
-            'email_type' => "required|max:255",
-            // 'contact' => "required|max:255",
+            'configuration' => "required|max:255",
         ]);
 
         $cms = new Config();
-        $cms->email_type = $request->email_type;
-        $cms->email_one = $request->email_one;
+        $cms->configuration = $request->configuration;
         $cms->save();
         $notification = array('message' =>'Your data Inserted Successfully ' , 'alert-type'=>'success' );
         return redirect()->route('congfigration')->with($notification);
@@ -90,14 +87,12 @@ class ConfigurationController extends Controller
     {
         // dd($request->all());
         $this->validate($request, [
-            'email_one' => "required|max:255",
-            'email_type' => "required|max:255",
+            'configuration' => "required|max:255",
 
         ]);
 
         $cms = Config::findOrFail($id);
-        $cms->email_type = $request->email_type;
-        $cms->email_one = $request->email_one;
+        $cms->configuration = $request->configuration;
         $cms->save();
         $notification = array('message' =>'Your data updateed Successfully ' , 'alert-type'=>'success' );
         return redirect()->route('congfigration')->with($notification);

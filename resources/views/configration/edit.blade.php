@@ -32,10 +32,10 @@
                 <form class="form theme-form" id="" action="{{ route("congfigrationUpdate",$edit_data->id ) }}" enctype="multipart/form-data" method="post">
                     @csrf
                 <div class="card-body">
-                    <div class="row">
+                    {{-- <div class="row">
                         <div class="col">
                             <div class="mb-3">
-                                {{-- <label for="exampleFormControlInput10">Type.*</label> --}}
+                                <label for="exampleFormControlInput10">Type.*</label>
                                 <input readonly  name="email_type" class="form-control btn-square" value="{{ $edit_data->email_type }}"id="exampleFormControlInput10" type="hidden" placeholder="email type">
                                 @error('email_type')
                                     <p class="help-block" style="color: red">
@@ -44,15 +44,15 @@
                                 @enderror
                             </div>
                         </div>
-                    </div>
+                    </div> --}}
                     <div class="row">
                         <div class="col">
                             <div class="mb-3">
                                 <label for="exampleFormControlInput10">Copyright.*</label>
-                                <input name="email_one" class="form-control btn-square" value="{{ $edit_data->email_one }}"id="exampleFormControlInput10" type="text" placeholder="email one">
-                                @error('email_one')
+                                <input name="configuration" class="form-control btn-square" value="{{ $edit_data->configuration }}"id="exampleFormControlInput10" type="text" placeholder="email one">
+                                @error('configuration')
                                     <p class="help-block" style="color: red">
-                                        {{ $errors->first('email_one') }}
+                                        {{ $errors->first('configuration') }}
                                     </p>
                                 @enderror
                             </div>

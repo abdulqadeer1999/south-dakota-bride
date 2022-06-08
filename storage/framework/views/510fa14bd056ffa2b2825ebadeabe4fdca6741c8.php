@@ -30,7 +30,9 @@
                             <div class="col-md-8">
                                 <h5>Settings</h5>
                             </div>
-                            
+                            <div class="col-md-4" align="right">
+                                <a type="button" class="btn btn-primary for-font-color" href="<?php echo e(route('congfigrationCreate')); ?>"> Create</a>
+                            </div>
                         </div>
                     </div>
                     <div class="card-body">
@@ -39,7 +41,7 @@
                                 <thead>
                                     <tr>
                                         <th>#</th>
-                                        <th>Type</th>
+                                        
                                         <th>Configration</th>
                                         <th>Action</th>
                                     </tr>
@@ -48,8 +50,8 @@
                                     <?php $__currentLoopData = $getCMS; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $key => $value): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
                                         <tr>
                                             <td><?php echo e($key+1); ?></td>
-                                            <td><?php echo e($value->email_type); ?></td>
-                                            <td><?php echo e($value->email_one); ?></td>
+                                            
+                                            <td><?php echo e($value->configuration); ?></td>
                                             <td>
                                                 
 
