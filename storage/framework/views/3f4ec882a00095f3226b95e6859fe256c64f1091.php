@@ -15,13 +15,13 @@
                             </div>
                             <div class="line-center">
                                 <ul>
-                                    <li><a href="https://www.facebook.com" target="_blank"><i
+                                    <li><a href="<?php echo e($facebook[0]->social_media ?? ''); ?>" target="_blank"><i
                                                 class="fa-brands fa-facebook-f"></i></a></li>
-                                    <li><a href="https://www.instagram.com" target="_blank"><i
+                                    <li><a href="<?php echo e($instagram[0]->social_media ?? ''); ?>" target="_blank"><i
                                                 class="fa-brands fa-instagram"></i></a></li>
-                                    <li><a href="https://www.twitter.com" target="_blank"><i
+                                    <li><a href="<?php echo e($twitter[0]->social_media ?? ''); ?>" target="_blank"><i
                                                 class="fa-brands fa-twitter"></i></a></li>
-                                    <li><a href="https://www.youtube.com" target="_blank"><i
+                                    <li><a href="<?php echo e($youtube[0]->social_media ?? ''); ?>" target="_blank"><i
                                                 class="fa-brands fa-youtube"></i></a></li>
                                 </ul>
                             </div>

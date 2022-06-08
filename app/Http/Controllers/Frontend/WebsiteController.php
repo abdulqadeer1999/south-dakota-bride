@@ -7,12 +7,21 @@ use App\Models\PrivacyPolicy;
 use App\Models\sociallink;
 use App\Models\TermsCondition;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\View;
 use Illuminate\Support\Facades\Auth;
 
 use function Ramsey\Uuid\v1;
 
 class WebsiteController extends Controller
 {
+    public function __construct()
+    {
+        $facebook = Sociallink::where('type','1')->get();
+        $instagram = Sociallink::where('type','2')->get();
+        $twitter = Sociallink::where('type','3')->get();
+        $youtube = Sociallink::where('type','4')->get();
+        view::share('facebook','instagram','twitter','youtube', $facebook,$instagram,$twitter,$youtube);
+    }
 
     public function adminlogin(Request $request){
         $credentials = Auth::attempt([
