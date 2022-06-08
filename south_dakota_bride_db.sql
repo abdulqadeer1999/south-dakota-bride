@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jun 08, 2022 at 01:30 AM
+-- Generation Time: Jun 08, 2022 at 05:21 PM
 -- Server version: 10.4.22-MariaDB
 -- PHP Version: 7.4.26
 
@@ -202,14 +202,17 @@ CREATE TABLE `coach_ratings` (
 
 CREATE TABLE `configs` (
   `id` bigint(20) UNSIGNED NOT NULL,
-  `copyright` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `contact` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `email_one` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `email_two` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `email_three` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `configuration` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data for table `configs`
+--
+
+INSERT INTO `configs` (`id`, `configuration`, `created_at`, `updated_at`) VALUES
+(1, 'Copyright @2022 South Dakota Bride. All rights reserved updated', '2022-06-08 10:05:29', '2022-06-08 10:05:37');
 
 -- --------------------------------------------------------
 
@@ -550,7 +553,7 @@ CREATE TABLE `sociallinks` (
 --
 
 INSERT INTO `sociallinks` (`id`, `type`, `social_media`, `facebook`, `twitter`, `instagram`, `created_at`, `updated_at`) VALUES
-(1, '1', 'https://www.facebook.com/', NULL, NULL, NULL, '2022-06-07 17:15:38', '2022-06-07 17:28:54'),
+(1, '1', 'https://www.facebook.com/aq', NULL, NULL, NULL, '2022-06-07 17:15:38', '2022-06-07 18:59:29'),
 (2, '2', 'https://www.instagram.com/', NULL, NULL, NULL, '2022-06-07 17:16:14', '2022-06-07 17:16:14'),
 (3, '3', 'https://www.twitter.com/', NULL, NULL, NULL, '2022-06-07 17:17:12', '2022-06-07 17:17:12'),
 (4, '4', 'https://www.youtube.com/', NULL, NULL, NULL, '2022-06-07 17:17:29', '2022-06-07 17:17:29');
@@ -906,7 +909,7 @@ ALTER TABLE `coach_ratings`
 -- AUTO_INCREMENT for table `configs`
 --
 ALTER TABLE `configs`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT for table `disputes`

@@ -23,7 +23,6 @@ class WebsiteController extends Controller
         $youtube = Sociallink::where('type','4')->get();
         $copyright = Config::first();
         view::share(get_defined_vars());
-        // view::share('facebook','instagram','twitter','youtube','copyright',$copyright, $facebook,$instagram,$twitter,$youtube);
     }
 
     public function adminlogin(Request $request){
