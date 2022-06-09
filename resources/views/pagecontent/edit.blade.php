@@ -71,7 +71,7 @@
                         </div>
                     </div>
                     @endif
-                    @if($edit_data->id != '3' && $edit_data->id !='5' &&  $edit_data->id !='7' &&  $edit_data->id !='8' &&  $edit_data->id !='9')
+                    @if($edit_data->id != '3' && $edit_data->id !='5' &&  $edit_data->id !='7' &&  $edit_data->id !='8' &&  $edit_data->id !='9' &&  $edit_data->id !='10' &&  $edit_data->id !='11')
                     @if($edit_data->id != '4')
                     <div class="row">
                         <div class="col">

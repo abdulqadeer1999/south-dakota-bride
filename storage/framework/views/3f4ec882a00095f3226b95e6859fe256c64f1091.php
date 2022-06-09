@@ -94,12 +94,10 @@
     <!-- ==============================================ABOUT  CLOSED============================================== -->
     <!-- ==============================================WEDDING PLANNING  OPEN============================================== -->
     <section class="wed-plan mt-5 mb-5 pb-5 wow animated bounceIn" data-wow-duration="1s" data-wow-delay="0.5s">
-        <h1 class="wed-text pt-5">plan your wedding with us</h1>
+        <h1 class="wed-text pt-5"><?php echo e($plan->title); ?></h1>
         <div class="container text-center">
-            <p class="wed-para text-center">Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempore.
-                maxime mollitia nobis unt unde at assumend.<br>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempore.
-                maxime mollitia nobis unt.<br>maxime mollitia nobis unt.
+            <p class="wed-para text-center"<?php echo $plan->description3; ?><br>
+                
             </p>
         </div>
     </section>
@@ -214,18 +212,14 @@
     <!-- ==============================================WEDDING PLANNING  SECOND SECTION  CLOSED============================================== -->
 
     <!-- ==============================================REGISTER NOW SECTION OPEN============================================== -->
-    <section class="register-section position-relative">
+    <section class="register-section position-relative" style="background-image: url('<?php echo e(asset('storage/uploads/cms/' . $vendors->image)); ?>')">
         <div class="register-upper-div">
             <div class="container">
                 <div class="col-lg-12 pt-5">
                     <div class="d-flex justify-content-center align-item-center pt-5 wow animated zoomIn">
                         <div>
-                            <h1 class="about-text text-center pt-5">Attention all vendors!</h1>
-                            <p class="about-para text-center pt-3">Lorem ipsum dolor sit amet consectetur
-                                adipisicing
-                                elit.
-                                Ipsam, assumenda Lorem<br> ipsum dolor
-                                sit amet consectetur.. </p>
+                            <h1 class="about-text text-center pt-5"><?php echo e($vendors->title); ?></h1>
+                            <p class="about-para text-center pt-3"><?php echo e($vendors->description3); ?><br>  </p>
                             <div class="reg-div text-center pb-5 pt-3"><a
                                     href="<?php echo e(route('register')); ?>"><button class="reg-btn">Register
                                         Now</button></a></div>

@@ -8,4 +8,8 @@ use Illuminate\Database\Eloquent\Model;
 class cms extends Model
 {
     use HasFactory;
+
+    public function getPageName(){
+        return $this->belongsTo(Page::class,'page');
+    }
 }

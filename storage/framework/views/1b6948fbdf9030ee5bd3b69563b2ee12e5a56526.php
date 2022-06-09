@@ -39,7 +39,8 @@
                                     <option selected disabled>Select type</option>
                                     <option value="1" <?php echo e(( $edit_data->type == '1') ? 'selected' : ''); ?>>Facebook</option>
                                     <option value="2" <?php echo e(( $edit_data->type == '2') ? 'selected' : ''); ?>>Instagram</option>
-                                    <option value="3" <?php echo e(( $edit_data->type == '3') ? 'selected' : ''); ?>>LinkedIn</option>
+                                    <option value="3" <?php echo e(( $edit_data->type == '3') ? 'selected' : ''); ?>>Twitter</option>
+                                    <option value="4" <?php echo e(( $edit_data->type == '4') ? 'selected' : ''); ?>>Youtube</option>
                                  </select>
                                 <?php $__errorArgs = ['type'];
 $__bag = $errors->getBag($__errorArgs[1] ?? 'default');

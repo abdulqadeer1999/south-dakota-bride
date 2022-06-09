@@ -85,7 +85,7 @@ sidebar-wrapper::-webkit-scrollbar-thumb:hover {
 		                    <li><a href="{{route('logo')}}" class="{{ Route::currentRouteName()=='logo' ? 'active' : '' }}">Logo Management</a></li>
                             <li><a href="{{route('PageName')}}" class="{{ Route::currentRouteName()=='PageName' ? 'active' : '' }}">Page Name</a></li>
                             <li><a href="{{route('PageContent')}}" class="{{ Route::currentRouteName()=='PageContent' ? 'active' : '' }}">Page Content</a></li>
-                            <li><a href="{{route('projects')}}" class="{{ Route::currentRouteName()=='projects' ? 'active' : '' }}">Sponsor Management</a></li>
+                            {{-- <li><a href="{{route('projects')}}" class="{{ Route::currentRouteName()=='projects' ? 'active' : '' }}">Sponsor Management</a></li> --}}
                             <li><a href="{{route('privacy')}}" class="{{ Route::currentRouteName()=='privacy' ? 'active' : '' }}">{{ trans('Privacy Policy') }}</a></li>
                             <li><a href="{{route('terms')}}" class="{{ Route::currentRouteName()=='terms' ? 'active' : '' }}">{{ trans('Terms and Conditions') }}</a></li>
 		                </ul>

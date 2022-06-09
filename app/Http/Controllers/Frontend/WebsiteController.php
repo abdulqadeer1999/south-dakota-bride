@@ -7,7 +7,7 @@ use App\Models\Blog;
 use App\Models\cms;
 use App\Models\Config;
 use App\Models\PrivacyPolicy;
-use App\Models\sociallink;
+use App\Models\Sociallink;
 use App\Models\TermsCondition;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\View;
@@ -43,9 +43,9 @@ class WebsiteController extends Controller
     }
     public function index(){
         $banner = cms::where('page','1')->first();
-        // return $banner;
         $about = cms::where('page','1')->where('section_name','AboutSection')->first();
-        // return $about;
+        $plan = cms::where('page','1')->where('section_name','Plan Your Wedding Section')->first();
+        $vendors = cms::where('page','1')->where('section_name','Attention All Vendors')->first();
         return view('website.index',get_defined_vars());
     }
     public function wedding(){

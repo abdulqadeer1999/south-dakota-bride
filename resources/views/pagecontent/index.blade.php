@@ -55,10 +55,13 @@
                                 </thead>
                                 <tbody>
                                     @foreach ($getCMS as $key => $value)
+                                    {{-- @foreach ($value->getPageName as $item)
+                                    {{$item}}
+                                    @endforeach --}}
                                         <tr>
                                            <td>{{ $key+1 }}</td>
-                                           <td>{{ $value->page }}</td>
-                                           {{-- <td>{{ $value->title1 }}</td>
+                                           <td>{{ $value->getPageName->page_name }}</td>
+                                           {{-- <td>{{ $value->getPageName }}</td>
                                            <td>{{ $value->title2 }}</td>
                                            <td>{{ $value->title3 }}</td>
                                            <td>{{ $value->title4 }}</td> --}}

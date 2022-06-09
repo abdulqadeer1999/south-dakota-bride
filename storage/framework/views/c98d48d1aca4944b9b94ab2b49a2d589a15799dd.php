@@ -80,7 +80,7 @@ unset($__errorArgs, $__bag); ?>
                         </div>
                     </div>
                     <?php endif; ?>
-                    <?php if($edit_data->id != '3' && $edit_data->id !='5' &&  $edit_data->id !='7' &&  $edit_data->id !='8' &&  $edit_data->id !='9'): ?>
+                    <?php if($edit_data->id != '3' && $edit_data->id !='5' &&  $edit_data->id !='7' &&  $edit_data->id !='8' &&  $edit_data->id !='9' &&  $edit_data->id !='10' &&  $edit_data->id !='11'): ?>
                     <?php if($edit_data->id != '4'): ?>
                     <div class="row">
                         <div class="col">

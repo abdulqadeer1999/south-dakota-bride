@@ -51,9 +51,10 @@
                                 </thead>
                                 <tbody>
                                     <?php $__currentLoopData = $getCMS; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $key => $value): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+                                    
                                         <tr>
                                            <td><?php echo e($key+1); ?></td>
-                                           <td><?php echo e($value->page); ?></td>
+                                           <td><?php echo e($value->getPageName->page_name); ?></td>
                                            
                                            <td>
                                             <?php if($value->image != null): ?>

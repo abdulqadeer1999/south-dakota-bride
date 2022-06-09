@@ -40,7 +40,8 @@
                                     <option selected disabled>Select type</option>
                                     <option value="1" {{ ( $edit_data->type == '1') ? 'selected' : '' }}>Facebook</option>
                                     <option value="2" {{ ( $edit_data->type == '2') ? 'selected' : '' }}>Instagram</option>
-                                    <option value="3" {{ ( $edit_data->type == '3') ? 'selected' : '' }}>LinkedIn</option>
+                                    <option value="3" {{ ( $edit_data->type == '3') ? 'selected' : '' }}>Twitter</option>
+                                    <option value="4" {{ ( $edit_data->type == '4') ? 'selected' : '' }}>Youtube</option>
                                  </select>
                                 @error('type')
                                     <p class="help-block" style="color: red">

@@ -85,7 +85,7 @@ sidebar-wrapper::-webkit-scrollbar-thumb:hover {
 		                    <li><a href="<?php echo e(route('logo')); ?>" class="<?php echo e(Route::currentRouteName()=='logo' ? 'active' : ''); ?>">Logo Management</a></li>
                             <li><a href="<?php echo e(route('PageName')); ?>" class="<?php echo e(Route::currentRouteName()=='PageName' ? 'active' : ''); ?>">Page Name</a></li>
                             <li><a href="<?php echo e(route('PageContent')); ?>" class="<?php echo e(Route::currentRouteName()=='PageContent' ? 'active' : ''); ?>">Page Content</a></li>
-                            <li><a href="<?php echo e(route('projects')); ?>" class="<?php echo e(Route::currentRouteName()=='projects' ? 'active' : ''); ?>">Sponsor Management</a></li>
+                            
                             <li><a href="<?php echo e(route('privacy')); ?>" class="<?php echo e(Route::currentRouteName()=='privacy' ? 'active' : ''); ?>"><?php echo e(trans('Privacy Policy')); ?></a></li>
                             <li><a href="<?php echo e(route('terms')); ?>" class="<?php echo e(Route::currentRouteName()=='terms' ? 'active' : ''); ?>"><?php echo e(trans('Terms and Conditions')); ?></a></li>
 		                </ul>

@@ -10,8 +10,9 @@ use Illuminate\Support\Facades\Storage;
 class CmsController extends Controller
 {
     public function projects_Index(){
-
-        $getCMS = cms::all();
+        $getpages= Page::get();
+        $getCMS = cms::with('getPageName')->get();
+        // return  $getCMS;
         // dd( $getCMS);
         return view('pagecontent.index',get_defined_vars());
 
@@ -106,7 +107,6 @@ class CmsController extends Controller
 
     public function project_destroy($id)
     {
-
         // dd($id);
         //$request->all();
         $cms = cms::find($id);
